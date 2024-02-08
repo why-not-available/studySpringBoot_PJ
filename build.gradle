@@ -31,9 +31,15 @@ dependencies {
 
 //  2.3장 롬복
     implementation('org.projectlombok:lombok')
+    testImplementation 'junit:junit:4.13.1'
     annotationProcessor('org.projectlombok:lombok')
 //    testImplementation('org.projectlombok:lombok')
 //    testAnnotationProcessor('org.projectlombok:lombok')
+
+//  3.2 프로젝트에 Spring Data JPA 적용하기: 의존성 등록하기
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('com.h2database:h2')
+
 //
     implementation('org.springframework.boot:spring-boot-starter-web')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
