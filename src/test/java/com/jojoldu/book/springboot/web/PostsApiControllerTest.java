@@ -2,6 +2,8 @@ package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.posts.PostsRepository;
+import com.jojoldu.book.springboot.web.dto.PostsSaveRequestDto;
+
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PostApiControllerTest {
+public class PostsApiControllerTest {
     @LocalServerPort
     private int port;
 
@@ -44,8 +46,9 @@ public class PostApiControllerTest {
                                                             .content(content)
                                                             .author("author").build();
 
-//      when
         String url = "http://localhost:" + port + "api/v1/posts";
+
+//      when
         ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);
 
 //      then
